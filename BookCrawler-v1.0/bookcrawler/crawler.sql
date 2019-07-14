@@ -27,16 +27,16 @@ DROP TABLE IF EXISTS `tb_book`;
 CREATE TABLE `tb_book` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sku` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` double DEFAULT NULL,
-  `author` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `author` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `publishing` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pubDate` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `imageName` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `bookUrl` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `imageUrl` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=479 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='京东书籍商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=626 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='京东书籍商品表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ CREATE TABLE `tb_book` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-14 11:51:58
+-- Dump completed on 2019-07-14 13:57:06
