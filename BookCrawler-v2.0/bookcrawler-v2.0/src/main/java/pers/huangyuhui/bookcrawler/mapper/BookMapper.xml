@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.huangyuhui.bookcrawler.mapper.BookMapper">
+    <!-- 添加图书信息 -->
+    <insert id="insert" parameterType="book">
+        INSERT INTO jd_book(shCode, name, author, publishing, pubDate, imageName, bookUrl, imageUrl)
+        VALUES (#{shCode}, #{name}, #{author}, #{publishing}, #{pubDate}, #{imageName}, #{bookUrl}, #{imageUrl})
+    </insert>
+</mapper>
