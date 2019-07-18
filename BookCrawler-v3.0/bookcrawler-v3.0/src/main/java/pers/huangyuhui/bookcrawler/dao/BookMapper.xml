@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.huangyuhui.bookcrawler.dao.BookMapper">
+    <!-- 根据图书名查询指定图书信息 -->
+    <select id="selectByName" parameterType="String" resultType="Book">
+        SELECT id, shCode, name, author, publishing, pubDate, imageName, bookUrl, imageUrl
+        FROM jd_book
+        WHERE name = #{name}
+    </select>
+    <!-- 根据图书名模糊查询指定/所有图书信息 -->
+    <select id="selectAll" parameterType="Book" resultType="Book">
+        SELECT id, shCode, name, author, publishing, pubDate, imageName, bookUrl, imageUrl FROM jd_book
+        <where>
+            <if test="name!=null and name!=''">
+                AND name LIKE concat(concat('%',#{name}),'%')
+            </if>
+        </where>
+    </select>
+    <!-- 根据id更新指定图书信息 -->
+    <update id="updateById" parameterType="Book">
+        UPDATE jd_book
+        <set>
+            <if test="name!=null and name!=''">name=#{name},</if>
+            <if test="author!=null and author!=''">author=#{author},</if>
+            <if test="publishing!=null and publishing!=''">publishing=#{publishing},</if>
+            <if test="pubDate!=null and pubDate!=''">pubDate=#{pubDate},</if>
+            <if test="imageUrl!=null and imageUrl!=''">imageUrl=#{imageUrl}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+    <!-- 批量删除指定id的图书信息 -->
+    <delete id="deleteById">
+        DELETE FROM jd_book WHERE id IN
+        <foreach collection="array" item="ids" open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
+</mapper>

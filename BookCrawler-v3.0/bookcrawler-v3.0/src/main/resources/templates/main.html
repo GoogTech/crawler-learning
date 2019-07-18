@@ -1,0 +1,70 @@
+<!--
+Description: 项目模板页
+Author: 黄宇辉
+Date: 7/17/2019
+Website: https://yubuntu0109.github.io/
+Version: 3.0
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书爬虫V3.0 ୧(๑•̀◡•́๑)૭</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/easyui/css/default.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/easyui/themes/metro/easyui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/easyui/themes/icon.css}"/>
+    <!-- JS -->
+    <script type="text/javascript" th:src="@{/static/easyui/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/easyui/js/outlook2.js}"></script>
+
+    <script type="text/javascript">
+        //设置系统功能菜单栏
+        var _menus = {
+            "menus": [
+                {
+                    "menuid": "10", "icon": "", "menuname": "爬虫分类",
+                    "menus": [
+                        {
+                            "menuid": "11",
+                            "menuname": "京东图书爬虫",
+                            "icon": "icon-book-open",
+                            "url": "goBookListView"
+                        }
+                    ]
+                }
+            ]
+        };
+
+    </script>
+</head>
+
+<!-- EasyUI 布局 -->
+<body class="easyui-layout" style="overflow-y: hidden" scroll="no">
+
+<!-- 页面底部-->
+<div region="south" split="true" style="height: 30px;">
+    <div class="footer">
+        Copyright @ 2019 黄宇辉. All rights reserved | 本人博客网站 : https://yubuntu0109.github.io
+    </div>
+</div>
+
+<!-- 导航菜单 -->
+<div region="west" hide="true" split="true" title="[ 导航菜单 ]" style="width:180px;" id="west">
+    <div id="nav" class="easyui-accordion" fit="true">
+        <!-- ······ -->
+    </div>
+</div>
+
+<!-- 欢迎页面 -->
+<div id="mainPanle" region="center" style="background: #eee; overflow-y:hidden">
+    <div id="tabs" class="easyui-tabs" fit="true">
+        <!-- 引入欢迎页资源: 注意'th:replace'与'th:include'的区别哟! -->
+        <div th:replace="intro.html"></div>
+    </div>
+</div>
+
+</body>
+</html>

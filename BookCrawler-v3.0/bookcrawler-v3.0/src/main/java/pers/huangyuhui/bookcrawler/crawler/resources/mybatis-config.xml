@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 读取配置文件 -->
+    <properties resource="db.properties"/>
+    <!-- 配置别名 -->
+    <typeAliases>
+        <package name="pers.huangyuhui.bookcrawler.pojo"/>
+    </typeAliases>
+    <!-- 配置数据库环境 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver.class}"/>
+                <property name="url" value="${jdbc.connection.url}"/>
+                <property name="username" value="${jdbc.connection.username}"/>
+                <property name="password" value="${jdbc.connection.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 配置Mapper -->
+    <mappers>
+        <mapper resource="pers/huangyuhui/bookcrawler/crawler/mapper/BookMapper.xml"/>
+    </mappers>
+</configuration>
