@@ -27,6 +27,7 @@
 
 
 ### 项目概述( `JDBookCrawler 3.0` )
+> 除此项目概述外，你也可以参考 : [博客文章](https://yubuntu0109.github.io/2019/07/17/%E5%B0%8F%E7%88%AC%E8%99%AB-JDBookCrawler-V3-0/)
 
 #### 项目结构图
 ```
@@ -164,7 +165,7 @@ public class BookCrawlerTest {
 }
 ```
 
-> 启动爬虫后其控制台输出的日志信息请参考 : [`JDBookCrawler v2.0`](https://yubuntu0109.github.io/2019/07/15/%E5%B0%8F%E7%88%AC%E8%99%AB-JDBookCrawler-V2-0/)*
+> 启动爬虫后其控制台输出的日志信息请参考 : [`JDBookCrawler v2.0`](https://yubuntu0109.github.io/2019/07/15/%E5%B0%8F%E7%88%AC%E8%99%AB-JDBookCrawler-V2-0/)
 
 3. *BookcrawlerApplication.java : 项目启动类( 爬虫程序成功运行完成后，就可以启动该`springboot`项目啦，这操作不尴尬哈哈哈 ~ )*
 ```java
